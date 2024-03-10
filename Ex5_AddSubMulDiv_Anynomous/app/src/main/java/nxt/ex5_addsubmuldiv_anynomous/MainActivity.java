@@ -40,79 +40,21 @@ public class MainActivity extends AppCompatActivity {
         nutTru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // xu ly tru
-                // code xu ly tru
-                // B1. lay du lieu 2 so
-                // B1.1 tim editText so 1 va 2
-
-                // B1.2 lay du lieu tu 2 dieu khien
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo2.getText().toString();
-                // B1.3 chuyen du lieu tu chuoi sang so
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                // B2 Tinh toan
-                float hieu = soA - soB;
-                // B3 in ket qua
-                // B3.1 tim EditText ket qua
-
-                // B3.2 chuan bi du lieu xuat, bien thanh dang chuoi
-                String chuoiKQ = String.valueOf(hieu);
-                // B3.3 gan ket qua len dieu khien
-                editTextKQ.setText(chuoiKQ);
+                XuLyTru();
             }
         });
 
         nutNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // xu ly nhan
-                // code xu ly nhan
-                // B1. lay du lieu 2 so
-                // B1.1 tim editText so 1 va 2
-
-                // B1.2 lay du lieu tu 2 dieu khien
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo2.getText().toString();
-                // B1.3 chuyen du lieu tu chuoi sang so
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                // B2 Tinh toan
-                float tich = soA * soB;
-                // B3 in ket qua
-                // B3.1 tim EditText ket qua
-
-                // B3.2 chuan bi du lieu xuat, bien thanh dang chuoi
-                String chuoiKQ = String.valueOf(tich);
-                // B3.3 gan ket qua len dieu khien
-                editTextKQ.setText(chuoiKQ);
+                XuLyNhan();
             }
         });
 
         nutChia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // xu ly chia
-                // code xu ly chia
-                // code xu ly cong
-                // B1. lay du lieu 2 so
-                // B1.1 tim editText so 1 va 2
-
-                // B1.2 lay du lieu tu 2 dieu khien
-                String soThu1 = editTextSo1.getText().toString();
-                String soThu2 = editTextSo2.getText().toString();
-                // B1.3 chuyen du lieu tu chuoi sang so
-                float soA = Float.parseFloat(soThu1);
-                float soB = Float.parseFloat(soThu2);
-                // B2 Tinh toan
-                float thuong = soA / soB;
-                // B3 in ket qua
-                // B3.1 tim EditText ket qua
-
-                // B3.2 chuan bi du lieu xuat, bien thanh dang chuoi
-                String chuoiKQ = String.valueOf(thuong);
-                // B3.3 gan ket qua len dieu khien
-                editTextKQ.setText(chuoiKQ);
+                XuLyChia();
             }
         });
     }
@@ -128,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         editTextKQ.setText(chuoiKQ);
     }
 
-     void XuLyTru(View v){
+     void XuLyTru(){
         String soThu1 = editTextSo1.getText().toString();
         String soThu2 = editTextSo2.getText().toString();
         float soA = Float.parseFloat(soThu1);
@@ -138,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         editTextKQ.setText(chuoiKQ);
     }
 
-     void XuLyNhan(View v){
+     void XuLyNhan(){
         String soThu1 = editTextSo1.getText().toString();
         String soThu2 = editTextSo2.getText().toString();
         float soA = Float.parseFloat(soThu1);
@@ -148,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         editTextKQ.setText(chuoiKQ);
     }
 
-     void XuLyChia(View v){
+     void XuLyChia(){
         String soThu1 = editTextSo1.getText().toString();
         String soThu2 = editTextSo2.getText().toString();
         float soA = Float.parseFloat(soThu1);
