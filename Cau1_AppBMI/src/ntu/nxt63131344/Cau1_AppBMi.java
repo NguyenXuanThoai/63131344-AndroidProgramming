@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -67,7 +68,7 @@ public class Cau1_AppBMi extends JFrame {
 
         JButton btnNewButton_1 = new JButton("Cài lại");
         btnNewButton_1.setBackground(Color.LIGHT_GRAY);
-        btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\ADMINIS\\Downloads\\reset.png"));
+        btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\ADMINIS\\Downloads\\reset.png")); 
         btnNewButton_1.setBounds(290, 366, 100, 50);
         contentPane.add(btnNewButton_1);
 
@@ -87,17 +88,19 @@ public class Cau1_AppBMi extends JFrame {
                     }
 
                     double bmi = tinhBMI(chieuCao, canNang);
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    bmi = Double.parseDouble(df.format(bmi));
                     String result = "";
                     if (gioiTinh.equals("Nam")) {
                         result = BMINam(bmi);
                     } else if (gioiTinh.equals("Nữ")) {
                         result = BMINu(bmi);
                     }
-                    JOptionPane.showMessageDialog(null, "Chỉ số BMI của bạn là: " + bmi + ". " + result);
+                    JOptionPane.showMessageDialog(null, "Chỉ số BMI của bạn là: " + bmi  + result);
                 }
             }
         });
-        btnNewButton.setIcon(new ImageIcon("C:\\Users\\ADMINIS\\Downloads\\calculator (3).png"));
+        btnNewButton.setIcon(new ImageIcon("C:\\Users\\ADMINIS\\Downloads\\calculator (3).png")); 
         btnNewButton.setBounds(90, 366, 176, 50);
         contentPane.add(btnNewButton);
 
