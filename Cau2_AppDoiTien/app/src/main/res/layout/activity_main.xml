@@ -31,51 +31,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="35dp"
-        android:text="Nhập số tiền :"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-    <EditText
-        android:id="@+id/edtTien"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="48dp"
         android:text="USD :"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="48dp"
         android:text="EUR :"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -86,13 +60,11 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="52dp"
         android:text=" VND :"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -100,23 +72,23 @@
         android:id="@+id/edtUSD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/text"
-        app:layout_constraintTop_toBottomOf="@+id/edtTien" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/edtEUR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,10 +127,13 @@
         android:id="@+id/edtVND"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/edtEUR" />
 
