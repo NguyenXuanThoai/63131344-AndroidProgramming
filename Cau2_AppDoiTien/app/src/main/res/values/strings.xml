@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">Cau2_AppDoiTien</string>
-    <string-array name="currencies">
-        <item>USD</item>
-        <item>EUR</item>
-    </string-array>
 </resources>
