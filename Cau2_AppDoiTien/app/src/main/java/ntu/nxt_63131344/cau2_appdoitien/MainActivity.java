@@ -1,7 +1,10 @@
 package ntu.nxt_63131344.cau2_appdoitien;
 
+import static java.lang.String.format;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,19 +42,41 @@ public class MainActivity extends AppCompatActivity {
         LayDl();
     }
 
+    @SuppressLint("DefaultLocale")
     void ChuyenDoiTien() {
         String strusd = edtUSD.getText().toString();
+        String streuro = edtEURO.getText().toString();
+        String strvnd = edtVND.getText().toString();
 
-        if (strusd.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Vui lòng nhập số tiền USD.", Toast.LENGTH_SHORT).show();
-            return;
+        if (!strusd.isEmpty()) {
+            double usd = Double.parseDouble(strusd);
+            double euro = usd * 0.92525;
+            double vnd = usd * 24767;
+
+            edtEURO.setText(String.valueOf(euro));
+            edtVND.setText(String.valueOf(vnd));
         }
-        double usd = Double.parseDouble(strusd);
-        double euro = usd * 0.92525;
-        double vnd = usd * 24767;
 
-        edtEURO.setText(String.valueOf(euro));
-        edtVND.setText(String.valueOf(vnd));
+        if (!streuro.isEmpty()) {
+            double euro = Double.parseDouble(streuro);
+            double usd = euro * 1.080215;
+            double vnd = euro * 26770;
+
+            edtUSD.setText(String.format("%.3f", usd));
+            edtVND.setText(String.valueOf(vnd));
+        }
+
+        if (!strvnd.isEmpty()) {
+            double vnd = Double.parseDouble(strvnd);
+            double usd = vnd / 24767;
+            double euro = vnd * 0.00004;
+
+            edtUSD.setText(String.format("%.3f", usd));
+            edtEURO.setText(String.valueOf(euro));
+        }
+        if(strusd.isEmpty() && streuro.isEmpty() &&strvnd.isEmpty()){
+            Toast.makeText(this, "Vui lòng nhập vào loại tiền bạn muốn chuyển!", Toast.LENGTH_SHORT).show();
+        }
     }
     void XoaDuLieu() {
         edtUSD.setText("");
