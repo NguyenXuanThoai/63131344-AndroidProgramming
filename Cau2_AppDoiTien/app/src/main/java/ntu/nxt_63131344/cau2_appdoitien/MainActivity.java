@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
                 ChuyenDoiTien();
             }
         });
+        btnXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XoaDuLieu();
+            }
+        });
     }
 
     @Override
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     void ChuyenDoiTien() {
         String strusd = edtUSD.getText().toString();
+
         if (strusd.isEmpty()) {
             Toast.makeText(MainActivity.this, "Vui lòng nhập số tiền USD.", Toast.LENGTH_SHORT).show();
             return;
@@ -45,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         edtEURO.setText(String.valueOf(euro));
         edtVND.setText(String.valueOf(vnd));
+    }
+    void XoaDuLieu() {
+        edtUSD.setText("");
+        edtEURO.setText("");
+        edtVND.setText("");
     }
 
 }
