@@ -71,6 +71,13 @@ public class Cau1_AppBMi extends JFrame {
         btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\ADMINIS\\Downloads\\reset.png")); 
         btnNewButton_1.setBounds(290, 366, 100, 50);
         contentPane.add(btnNewButton_1);
+        btnNewButton_1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                edtChieucao.setText("");
+                edtCannang.setText("");
+                genderGroup.clearSelection();
+            }
+        });
 
         JButton btnNewButton = new JButton("Tính toán");
         btnNewButton.setForeground(Color.BLACK);
@@ -207,4 +214,5 @@ public class Cau1_AppBMi extends JFrame {
         }
         return "";
     }
+    
 }
