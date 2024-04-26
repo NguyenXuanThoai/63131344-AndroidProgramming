@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#71BCF8"
+    android:background="@drawable/login"
     >
 
     <TextView
@@ -13,13 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="160dp"
         android:text="MÀN HÌNH ĐĂNG NHẬP"
-        android:textColor="#1732CD"
+        android:textColor="#AE172E"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -27,7 +28,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="410dp"
         android:layout_height="75dp"
-        android:background="#FFC000"
+        android:background="#49BAED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
