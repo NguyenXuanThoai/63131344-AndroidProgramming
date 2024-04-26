@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 return true;
             } else if (itemId == R.id.bottom_settings) {
-                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                startActivity(new Intent(getApplicationContext(), SettingActivity.class));
                 overridePendingTransition(R.anim.slide_right, R.anim.slide_left);
                 finish();
                 return true;
