@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,51 +16,95 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Cau2Fragment extends Fragment {
+    // khai bao cac doi tuong gan voi dieu khien tuong ung o day
+    EditText editTextSo1;
+    EditText editTextSo2;
+    EditText editTextKQ;
+    Button nutCong, nutTru, nutNhan, nutChia;
+    void TimDK(){
+        editTextSo1 =  (EditText)findViewById(R.id.edtSo1);
+        editTextSo2 =  (EditText)findViewById(R.id.edtSo2);
+        editTextKQ = (EditText) findViewById(R.id.edtKQ);
+        nutCong =(Button) findViewById(R.id.btnCong);
+        nutTru =(Button) findViewById(R.id.btnTru);
+        nutNhan =(Button) findViewById(R.id.btnNhan);
+        nutChia =(Button) findViewById(R.id.btnChia);
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Cau2Fragment() {
-        // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Cau2Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Cau2Fragment newInstance(String param1, String param2) {
-        Cau2Fragment fragment = new Cau2Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        setContentView(R.layout.activity_main);
+        TimDK();
+        // gan bo lang nghe SK va code xu ly cho tung nut
+        View.OnClickListener boLangNgheCong = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XuLyCong();
+            }
+        };
+        nutCong.setOnClickListener(boLangNgheCong);
+
+        nutTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XuLyTru();
+            }
+        });
+
+        nutNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XuLyNhan();
+            }
+        });
+
+        nutChia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XuLyChia();
+            }
+        });
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cau2, container, false);
+    // xu li cong
+    void XuLyCong(){
+        String soThu1 = editTextSo1.getText().toString();
+        String soThu2 = editTextSo2.getText().toString();
+        float soA = Float.parseFloat(soThu1);
+        float soB = Float.parseFloat(soThu2);
+        float tong = soA + soB;
+        String chuoiKQ = String.valueOf(tong);
+        editTextKQ.setText(chuoiKQ);
+    }
+
+    void XuLyTru(){
+        String soThu1 = editTextSo1.getText().toString();
+        String soThu2 = editTextSo2.getText().toString();
+        float soA = Float.parseFloat(soThu1);
+        float soB = Float.parseFloat(soThu2);
+        float hieu = soA - soB;
+        String chuoiKQ = String.valueOf(hieu);
+        editTextKQ.setText(chuoiKQ);
+    }
+
+    void XuLyNhan(){
+        String soThu1 = editTextSo1.getText().toString();
+        String soThu2 = editTextSo2.getText().toString();
+        float soA = Float.parseFloat(soThu1);
+        float soB = Float.parseFloat(soThu2);
+        float tich = soA * soB;
+        String chuoiKQ = String.valueOf(tich);
+        editTextKQ.setText(chuoiKQ);
+    }
+
+    void XuLyChia(){
+        String soThu1 = editTextSo1.getText().toString();
+        String soThu2 = editTextSo2.getText().toString();
+        float soA = Float.parseFloat(soThu1);
+        float soB = Float.parseFloat(soThu2);
+        float thuong = soA / soB;
+        String chuoiKQ = String.valueOf(thuong);
+        editTextKQ.setText(chuoiKQ);
     }
 }
